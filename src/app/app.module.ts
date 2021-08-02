@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductDetailsComponent } from './product/ProductDetails.component';
-import { ProductListComponent } from './product/ProductList.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/Header.component';
+import { NavbarComponent } from './navbar/Navbar.component';
+import { ProductDetailsComponent } from './product-details/ProductDetails.component';
+import { ProductListComponent } from './product-list/ProductList.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    FooterComponent,
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

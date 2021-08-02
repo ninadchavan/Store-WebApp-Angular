@@ -1,0 +1,32 @@
+.productdetails{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.productdetailsimage img{
+    height: 75vh;
+    width: 25vw;
+}
+
+.productdetailsdata{
+    display: flex;
+    flex-direction: column;
+}
+
+.productdetailsdata p{
+    font-weight: bold;;
+}
+
+.productdetailsdata button{
+    width: 15%;
+}
+
+.productdetailsedit{
+    width: 100%;
+}
+
+.productdetailsedit button{
+    margin-right: 5%;
+    margin-top: 5%;
+}
