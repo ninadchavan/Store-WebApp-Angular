@@ -1,13 +1,18 @@
 .content-home{
     background-image: url("../../assets/Background1.jpg");
     background-repeat: no-repeat;
-    /* background-position: center; */
-    background-size: auto;
+    background-position: bottom right;
+    background-size: cover;
     width: 101%;
-    height: 85vh;
+    height: 100vh;
 }
 
 .mes{
     color: white;
-    margin-top: 15%;
+    margin-top: 18%;
+    text-align: center;
+}
+
+.mes button{
+    width: 50%;
 }

@@ -13,12 +13,12 @@ export class ProductListComponent{
   errorMessage:string
 
   constructor(private service:ProductService){}
-    ngOnInit():void{
-        this.service.getProducts().subscribe({
-            next:products => {
-                this.products=products
-            },
-            error:err => this.errorMessage = err
-        })
-    }
+  ngOnInit():void{
+      this.service.getProducts().subscribe({
+          next:products => {
+              this.products=products
+          },
+          error:err => this.errorMessage = err
+      })
+  }
 }

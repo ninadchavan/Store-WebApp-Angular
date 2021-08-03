@@ -15,6 +15,7 @@ export class EditProductComponent {
 
   product_param
   errorMessage:string
+  originalProduct:Product = new Product()
   editedProduct:Product = new Product()
 
   ngOnInit(){
@@ -22,11 +23,19 @@ export class EditProductComponent {
       this.product_param = params
       this.service.getProduct(this.product_param.params.id).subscribe({
         next:product => {
-          this.editedProduct = product
+          this.originalProduct = product
         },
         error:err => this.errorMessage = err
       })
     })
+
+    this.service.getProduct(this.product_param.params.id).subscribe({
+      next:product => {
+        this.editedProduct = product
+      },
+      error:err => this.errorMessage = err
+    })
+
   }
 
   getValidationMessages(state:any, thingName?:string){

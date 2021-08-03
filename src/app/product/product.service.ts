@@ -27,7 +27,11 @@ export class ProductService{
 
     // execute a POST
     addProduct(p:Product):Observable<any>{
-        return null
+        const url = `${this.producturl}`
+        return this.http.post<Product>(url, p).pipe(
+            tap(data => console.log("Added Product: " + JSON.stringify(data))),
+            catchError(this.handleError)
+        )
     }
 
     // execute a PUT
