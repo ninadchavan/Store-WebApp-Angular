@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #F8F8FF;
     /* align-items: stretch; */
 }
 
@@ -39,4 +40,14 @@
 .card img{
     width: 75%;
     align-self: center;
+}
+
+.searchbar{
+    display: flex;
+    justify-content: center;
+    background-color: #F8F8FF;
+}
+
+.searchbar input{
+    width: 30%;
 }

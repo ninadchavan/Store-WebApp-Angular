@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AddProductComponent } from './add-pproduct/AddProduct.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +33,7 @@ import { ProductData } from './product/product-data';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    Ng2SearchPipeModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(ProductData)
   ],

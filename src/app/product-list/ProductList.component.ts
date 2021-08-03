@@ -11,6 +11,7 @@ export class ProductListComponent{
 
   products:Product[] = []
   errorMessage:string
+  term:string
 
   constructor(private service:ProductService){}
   ngOnInit():void{
