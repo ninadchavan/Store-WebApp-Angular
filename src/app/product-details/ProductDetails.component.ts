@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../product/product.model';
+import { ProductService } from '../product/product.service';
 
 @Component({
   selector: 'prod-details',
@@ -7,16 +9,29 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./ProductDetails.component.css']
 })
 export class ProductDetailsComponent {
-  constructor(private route: ActivatedRoute){}
+  constructor(private route: ActivatedRoute, private service:ProductService, private router:Router){}
 
   product_param
-  title=""
+  product:Product
+  errorMessage:string
 
   ngOnInit(){
     this.route.paramMap.subscribe(params => {
       this.product_param = params
+      this.service.getProduct(this.product_param.params.id).subscribe({
+        next:product => {
+          this.product = product
+        },
+        error:err => this.errorMessage = err
+      })
     })
+  }
 
-    this.title = this.product_param.params.id
+  delete(id:number):void{
+    if(confirm("Are you sure to delete" + this.product.name)){
+      this.service.deleteProduct(id).subscribe(
+        () => this.router.navigateByUrl('/products')
+      )
+    }
   }
 }

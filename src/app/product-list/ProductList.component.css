@@ -19,13 +19,24 @@
 }
 
 .card h5{
-    margin: 5%;
+    margin: 2% 1%;
+    font-weight: bold;
+}
+
+.card h6{
+    margin: 2% 1%;
 }
 
 .card button {
     width: 100%;
+    margin-top: 2%;
 }
 
 .card button:hover {
     opacity: 0.7;
+}
+
+.card img{
+    width: 75%;
+    align-self: center;
 }

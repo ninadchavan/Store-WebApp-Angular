@@ -1,17 +1,121 @@
+<style>
+    input.ng-dirty.ng-invalid {border:2px solid #ff0000}
+    input.ng-dirty.ng-valid {border:2px solid #6bc502}
+</style>
+
 <div class="row justify-content-center">
     <div class="col-md-5">
-        <h1>product Details</h1>
-
-        <input type="text" placeholder="Enter the Product Name" class="form-control" />
-
-        <input type="text" placeholder="Enter the Product Category" class="form-control" />
-
-        <textarea placeholder="Enter the Product Description" class="form-control"></textarea>
-
-        <input type="text" placeholder="Enter the Product Price" class="form-control" />
+        <h1>Product Details</h1>
         
-        <input type="text" placeholder="Enter the Rating" class="form-control" />
+        <form novalidate #form="ngForm" (ngSubmit)=submitForm(form)>
+            <div class="form-group">
+                <label for="prodname">Product Name</label>
+                <input 
+                type="text" 
+                id="prodname" 
+                name="name"
+                #name="ngModel"
+                [(ngModel)]=editedProduct.name
+                class="form-control"
+                required />
 
-        <button class="btn btn-primary">Submit</button>
+                <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || name.dirty) && name.invalid">
+                    <li *ngFor="let error of getValidationMessages(name)">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="prodcode">Product Code</label>
+                <input 
+                type="text" 
+                id="prodcode" 
+                name="code"
+                #code="ngModel"
+                [(ngModel)]=editedProduct.code
+                class="form-control"
+                required />
+
+                <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || code.dirty) && code.invalid">
+                    <li *ngFor="let error of getValidationMessages(code)">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="prodcat">Product Category</label>
+                <input type="text" 
+                id=prodcat 
+                name="category"
+                #category="ngModel"
+                [(ngModel)]=editedProduct.category
+                class="form-control"
+                required />
+
+                <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || category.dirty) && category.invalid">
+                    <li *ngFor="let error of getValidationMessages(category)">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="proddesc">Product Description</label>
+                <textarea 
+                id="proddesc" 
+                name="description"
+                #description="ngModel"
+                [(ngModel)]=editedProduct.description
+                class="form-control"
+                required ></textarea>
+
+                <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || description.dirty) && description.invalid">
+                    <li *ngFor="let error of getValidationMessages(description)">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="prodprice">Product Price</label>
+                <input 
+                type="text" 
+                id="prodprice" 
+                name="price"
+                #price="ngModel"
+                [(ngModel)]=editedProduct.price
+                class="form-control"
+                required
+                pattern="^[0-9\.]+$" />
+
+                <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || price.dirty) && price.invalid">
+                    <li *ngFor="let error of getValidationMessages(price)">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="form-group">
+                <label for="prodrat">Product Rating</label>
+                <input type="text" 
+                id="prodrat" 
+                name="rating"
+                #rating="ngModel"
+                [(ngModel)]=editedProduct.rating
+                class="form-control"
+                required
+                pattern="^[0-9\.]+$" />
+
+                <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || rating.dirty) && rating.invalid">
+                    <li *ngFor="let error of getValidationMessages(rating)">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 </div>

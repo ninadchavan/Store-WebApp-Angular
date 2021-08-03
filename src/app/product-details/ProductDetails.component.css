@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
+    /* font-size: large; */
 }
 
 .productdetailsimage img{
@@ -10,16 +11,20 @@
 }
 
 .productdetailsdata{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 5%;
 }
 
 .productdetailsdata p{
-    font-weight: bold;;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .productdetailsdata button{
-    width: 15%;
+    margin: 5% 0%;
+    width: 20%;
 }
 
 .productdetailsedit{
@@ -29,4 +34,5 @@
 .productdetailsedit button{
     margin-right: 5%;
     margin-top: 5%;
+    width: 30%;
 }

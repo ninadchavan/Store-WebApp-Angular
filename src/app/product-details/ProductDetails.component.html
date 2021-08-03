@@ -1,20 +1,21 @@
 <div class="productdetails">
-    <div class="productdetailsimage">
+    <div class="productdetailsimage m-5">
         <img src="../../assets/image.jpg" />
     </div>
-    <div class="productdetailsdata m-5 p-2">
-        <p>{{title}} Apple Watch</p>
+    <div class="productdetailsdata p-3">
+        <p>{{ product.name }}</p>
         <p>
             Description:<br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis orci sed turpis viverra suscipit. Maecenas aliquet in erat vel volutpat.
+            {{ product.description }}
         </p>
-        <p>Price: Rs.1000</p>
-        <p>Rating: 5</p>
+        <p>Category: {{ product.category }}</p>
+        <p>Price: {{ product.price | currency:'INR' }}</p>
+        <p>Rating: {{ product.rating }}</p>
         <button class="btn btn-success">Add to Cart</button>
 
         <div class="productdetailsedit">
-            <button routerLink = "/products/{{title}}/edit" class="btn btn-outline-warning">Edit</button>
-            <button class="btn btn-outline-danger">Delete</button>
+            <button routerLink = "/products/{{product.id}}/edit" class="btn btn-outline-primary ">Edit</button>
+            <button class="btn btn-outline-danger" (click)="delete(product.id)">Delete</button>
         </div>
     </div>
 </div>

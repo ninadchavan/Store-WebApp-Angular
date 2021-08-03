@@ -10,11 +10,17 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-input{
+.form-group{
     margin-top: 5% !important;
     border-width: medium;
 }
 
+button{
+    margin-top: 5%;
+    width: 25%;
+} 
+
+/*
 select{
     margin-top: 5% !important;
     border-width: medium;
@@ -41,33 +47,8 @@ h1{
     padding: 2%;
 }
 
-.card{
-    padding: 2%;
-    margin: 1%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    /* font-family: arial; */
-}
-
-.card-inside{
-    padding: 2%;
-    margin: 1%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    border-radius: 10px;
-    text-align: left;
-    color: #292b2c;
-    /* font-family: arial; */
-}
-
-.card-inside p{
-    color: #292b2c;
-    font-size: 16px;
-}
-
 span{
     font-weight: bold;
 }
 
-button{
-    margin-top: 5%;
-}
+*/

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from '../product/product.model';
+import { ProductService } from '../product/product.service';
 
 @Component({
   selector: 'prod-list',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./ProductList.component.css']
 })
 export class ProductListComponent{
-  productlist:string[] = ["prod1","prod2","prod3","prod4","prod5","prod6","prod7","prod8","prod9","prod10","prod11","prod12"]
+
+  products:Product[] = []
+  errorMessage:string
+
+  constructor(private service:ProductService){}
+    ngOnInit():void{
+        this.service.getProducts().subscribe({
+            next:products => {
+                this.products=products
+            },
+            error:err => this.errorMessage = err
+        })
+    }
 }
