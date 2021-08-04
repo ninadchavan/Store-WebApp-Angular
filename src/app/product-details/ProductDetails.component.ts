@@ -12,7 +12,7 @@ export class ProductDetailsComponent {
   constructor(private route: ActivatedRoute, private service:ProductService, private router:Router){}
 
   product_param
-  product:Product
+  product:Product = new Product()
   errorMessage:string
 
   ngOnInit(){

@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AddProductComponent } from './add-pproduct/AddProduct.component';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EditProductComponent } from './edit-product/EditProduct.component';
